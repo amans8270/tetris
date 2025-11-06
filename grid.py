@@ -1,3 +1,4 @@
+import pygame
 class Grid:
     def __init__(self):
         self.num_row=20
@@ -23,3 +24,10 @@ class Grid:
         dark_blue = (44, 44, 127)
         light_blue = (59, 85, 162)
         return [dark_grey,green,red,orange,yellow,purple,cyan,blue,white,dark_blue,light_blue]
+    def draw(self,screen):
+        for row in range(self.num_row):
+              for column in range(self.num_column):
+                cell_value = self.grid[row][column]
+                cell_rect = pygame.Rect(column*self.cell_size + 11, row*self.cell_size + 11,
+				self.cell_size -1, self.cell_size -1)
+                pygame.draw.rect(screen, self.colors[cell_value], cell_rect)
