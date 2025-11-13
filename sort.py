@@ -1,5 +1,6 @@
 arr=[1,2,6,3,8,2,1]
-'''temp=0
+''' Bubble Sort
+temp=0
 for i in range(0,len(arr)-1):
     sapped=False
     for j in range(0,len(arr)-1-i):
@@ -13,7 +14,7 @@ for i in range(0,len(arr)-1):
         break
 print(arr)'''
 
-
+''' Selection Sort
 for i in range(0,len(arr)-1):
     min=i
     for j in range(i+1,len(arr)):
@@ -21,4 +22,25 @@ for i in range(0,len(arr)-1):
             min=j
     arr[i],arr[min]=arr[min],arr[i]
     print(arr)
-    
+'''
+"INSERTION SORT"
+'''for i in range(1,len(arr)):
+    key=arr[i]
+    j=i-1
+    while( j>=0 and arr[j]>key):
+        arr[j+1]=arr[j]
+        j-=1
+    arr[j+1]=key
+    print(arr)'''
+
+gap=len(arr)//2
+while(gap>=1):
+    for i in range(0,len(arr)):
+        key=arr[i]
+        j=i-1
+        while( j>=0 and arr[j]>key):
+            arr[j+1]=arr[j]
+            j-=1
+        arr[j+1]=key
+    gap=gap//2
+    print(arr)
